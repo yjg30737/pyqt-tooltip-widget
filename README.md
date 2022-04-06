@@ -7,6 +7,10 @@ PyQt QWidget as a tooltip
 ## Setup
 `pip3 install git+https://github.com/yjg30737/pyqt-tooltip-widget.git --upgrade`
 
+## Detailed Description
+* <b>Usage:</b> Just make instance of it like `self.toolTip = ToolTipWidget(yourWidget)`. toolTip instance should be class variable. 
+* `ToolTipWidget` inherits `QWidget`, so you can decorate it just like `QWidget`.
+
 ## Example
 Code Sample
 ```python
