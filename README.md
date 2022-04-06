@@ -44,7 +44,7 @@ class MainWindow(QMainWindow):
         mainWidget.setLayout(lay)
 
         ### Make tooltip start ###
-        dateTableWidget = DateTableWidget()
+        dateTableWidget = DateTableWidget() # https://github.com/yjg30737/pyqt-date-table-widget.git
         lay = QVBoxLayout()
         lay.addWidget(dateTableWidget)
         lay.setContentsMargins(0, 0, 0, 0)
