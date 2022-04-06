@@ -8,7 +8,7 @@ PyQt QWidget as a tooltip
 `pip3 install git+https://github.com/yjg30737/pyqt-tooltip-widget.git --upgrade`
 
 ## Detailed Description
-* <b>Usage</b> - Just make instance of it like `self.toolTip = ToolTipWidget(yourWidget)`. Instance should be class variable. 
+* <b>Usage</b> - Just make instance of it like `self.toolTip = ToolTipWidget(yourWidget)`. `yourWidget` argument is the widget which you want to set tooltip of. Instance should be class variable. 
 * `ToolTipWidget` inherits `QWidget`, so you can decorate it just like `QWidget`.
 
 ## Example
@@ -34,9 +34,9 @@ class MainWindow(QMainWindow):
         lay = QVBoxLayout()
         lay.addWidget(QTextEdit())
 
-        self.__tooltip = ToolTipWidget(btn)
-        self.__tooltip.setFixedSize(200, 200)
-        self.__tooltip.setLayout(lay)
+        self.__tooltip = ToolTipWidget(btn) # Set button's tooltip
+        self.__tooltip.setFixedSize(200, 200) # Set the size
+        self.__tooltip.setLayout(lay) # Set the layout of tooltip
 
         self.setCentralWidget(mainWidget)
 
