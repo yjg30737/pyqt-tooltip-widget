@@ -16,8 +16,11 @@ I made it work by catching `QEnterEvent` and `QLeaveEvent` of widget.
 
 ### Usage
 
-Just make instance of it like `self.toolTip = ToolTipWidget(yourWidget)`. `yourWidget` argument is the widget which you want to set tooltip of. Instance should be class variable. 
+Just make instance of it like `self.toolTip = ToolTipWidget(yourWidget)`. `yourWidget` argument is the widget which you want to set tooltip of. Instance should be class variable.
 
+### Method Overview
+* `setStillOpenWhenCursorLeaveFromToolTipWidget(f: bool)` - Tooltip will be kept showing when cursor is inside the tooltip. (this is disabled by default) 
+* `isStillOpenWhenCursorLeaveFromToolTipWidget() -> bool`
 
 ## Example
 Code Sample
