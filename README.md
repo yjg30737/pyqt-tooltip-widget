@@ -1,2 +1,52 @@
 # pyqt-tooltip-widget
 PyQt QWidget as a tooltip
+
+## Requirements
+* PyQt5 >= 5.8
+
+## Setup
+`pip3 install git+https://github.com/yjg30737/pyqt-tooltip-widget.git --upgrade`
+
+## Example
+Code Sample
+```python
+from PyQt5.QtWidgets import QWidget, QMainWindow, QHBoxLayout, QPushButton, QApplication, QTextEdit, QVBoxLayout
+from pyqt_tooltip_widget import ToolTipWidget
+
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.__initUi()
+
+    def __initUi(self):
+        btn = QPushButton('OK')
+        lay = QHBoxLayout()
+        lay.addWidget(btn)
+
+        mainWidget = QWidget()
+        mainWidget.setLayout(lay)
+
+        lay = QVBoxLayout()
+        lay.addWidget(QTextEdit())
+
+        self.__tooltip = ToolTipWidget(btn)
+        self.__tooltip.setFixedSize(200, 200)
+        self.__tooltip.setLayout(lay)
+
+        self.setCentralWidget(mainWidget)
+
+
+if __name__ == "__main__":
+    import sys
+
+    app = QApplication(sys.argv)
+    example = MainWindow()
+    example.show()
+    app.exec_()
+```
+
+Result
+
+![image](https://user-images.githubusercontent.com/55078043/161880140-7cf7ad82-41f4-4046-85a9-4e7cfad2e725.png)
+
