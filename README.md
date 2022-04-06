@@ -8,8 +8,14 @@ PyQt QWidget as a tooltip
 `pip3 install git+https://github.com/yjg30737/pyqt-tooltip-widget.git --upgrade`
 
 ## Detailed Description
-* <b>Usage</b> - Just make instance of it like `self.toolTip = ToolTipWidget(yourWidget)`. `yourWidget` argument is the widget which you want to set tooltip of. Instance should be class variable. 
-* `ToolTipWidget` inherits `QWidget`, so you can decorate it just like `QWidget`.
+This is `QWidget` which is activated like tooltip. When mouse cursor enters to the widget, "tooltip" widget pops up at the bottom left of the widget. Leave from the widget tooltip will be disappeared.
+
+`ToolTipWidget` inherits `QWidget`, so you can decorate it just like `QWidget`.
+
+### Usage
+
+Just make instance of it like `self.toolTip = ToolTipWidget(yourWidget)`. `yourWidget` argument is the widget which you want to set tooltip of. Instance should be class variable. 
+
 
 ## Example
 Code Sample
