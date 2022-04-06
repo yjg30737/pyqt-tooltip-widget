@@ -9,8 +9,8 @@ class ToolTipWidget(QWidget):
         self.__initUi()
 
     def __initVal(self, widget_to_set_tooltip_widget):
-        self.__stillOpenWhenCursorLeaveFromTooltipWidget = False
-        self.__tooltip_widget_name = 'tooltipWidget'
+        self.__stillOpenWhenCursorLeaveFromToolTipWidget = False
+        self.__tooltip_widget_name = 'toolTipWidget'
 
         self.__widget_to_set_tooltip_widget = widget_to_set_tooltip_widget
         self.__widget_name = 'widgetToSetToolTipWidget'
@@ -21,14 +21,14 @@ class ToolTipWidget(QWidget):
         self.__widget_to_set_tooltip_widget.setMouseTracking(True)
         self.__widget_to_set_tooltip_widget.installEventFilter(self)
 
-    def isStillOpenWhenCursorLeaveFromTooltipWidget(self) -> bool:
-        return self.__stillOpenWhenCursorLeaveFromTooltipWidget
+    def isStillOpenWhenCursorLeaveFromToolTipWidget(self) -> bool:
+        return self.__stillOpenWhenCursorLeaveFromToolTipWidget
 
-    def setStillOpenWhenCursorLeaveFromTooltipWidget(self, f: bool):
-        self.__stillOpenWhenCursorLeaveFromTooltipWidget = f
+    def setStillOpenWhenCursorLeaveFromToolTipWidget(self, f: bool):
+        self.__stillOpenWhenCursorLeaveFromToolTipWidget = f
 
     def eventFilter(self, obj, e):
-        if self.isStillOpenWhenCursorLeaveFromTooltipWidget():
+        if self.isStillOpenWhenCursorLeaveFromToolTipWidget():
             if obj.objectName() == self.__tooltip_widget_name or obj.objectName() == self.__widget_name:
                 if obj.objectName() == self.__widget_name:
                     self.__execToolTip(e)
