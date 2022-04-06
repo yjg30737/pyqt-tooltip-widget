@@ -17,7 +17,7 @@ class ToolTipWidget(QWidget):
 
     def __initUi(self):
         self.setWindowFlags(Qt.FramelessWindowHint | Qt.SubWindow)
-        self.__widget_to_set_tooltip_widget.setObjectName(self.__obj_name)
+        self.__widget_to_set_tooltip_widget.setObjectName(self.__widget_name)
         self.__widget_to_set_tooltip_widget.setMouseTracking(True)
         self.__widget_to_set_tooltip_widget.installEventFilter(self)
 
