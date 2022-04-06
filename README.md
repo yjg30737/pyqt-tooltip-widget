@@ -10,6 +10,8 @@ PyQt QWidget as a tooltip
 ## Detailed Description
 This is `QWidget` which is activated like tooltip. When mouse cursor enters to the widget, "tooltip" widget pops up at the bottom left of the widget. Leave from the widget tooltip will be disappeared.
 
+I made it work by catching `QEnterEvent` and `QLeaveEvent` of widget.
+
 `ToolTipWidget` inherits `QWidget`, so you can decorate it just like `QWidget`.
 
 ### Usage
