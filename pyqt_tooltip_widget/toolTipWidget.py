@@ -12,7 +12,7 @@ class ToolTipWidget(QWidget):
         self.__tooltip_widget_name = 'tooltipWidget'
 
         self.__widget_to_set_tooltip_widget = widget_to_set_tooltip_widget
-        self.__obj_name = 'widgetToSetToolTipWidget'
+        self.__widget_name = 'widgetToSetToolTipWidget'
 
     def __initUi(self):
         self.setWindowFlags(Qt.FramelessWindowHint | Qt.SubWindow)
@@ -21,10 +21,12 @@ class ToolTipWidget(QWidget):
         self.__widget_to_set_tooltip_widget.installEventFilter(self)
 
     def eventFilter(self, obj, e):
-        if obj.objectName() == self.__obj_name:
+        if obj.objectName() == self.__widget_name:
             if e.type() == 10:
                 self.__show()
             elif e.type() == 11:
+                self.close()
+            elif e.type() == 2:
                 self.close()
         return super().eventFilter(obj, e)
 
