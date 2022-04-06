@@ -25,7 +25,8 @@ Just make instance of it like `self.toolTip = ToolTipWidget(yourWidget)`. `yourW
 ## Example
 Code Sample
 ```python
-from PyQt5.QtWidgets import QWidget, QMainWindow, QHBoxLayout, QPushButton, QApplication, QTextEdit, QVBoxLayout
+from PyQt5.QtWidgets import QWidget, QMainWindow, QHBoxLayout, QPushButton, QApplication, QVBoxLayout
+from pyqt_date_table_widget import DateTableWidget
 from pyqt_tooltip_widget import ToolTipWidget
 
 
@@ -35,19 +36,23 @@ class MainWindow(QMainWindow):
         self.__initUi()
 
     def __initUi(self):
-        btn = QPushButton('OK')
+        btn = QPushButton('Show Date Table Widget')
         lay = QHBoxLayout()
         lay.addWidget(btn)
 
         mainWidget = QWidget()
         mainWidget.setLayout(lay)
 
+        ### Make tooltip start ###
+        dateTableWidget = DateTableWidget()
         lay = QVBoxLayout()
-        lay.addWidget(QTextEdit())
+        lay.addWidget(dateTableWidget)
+        lay.setContentsMargins(0, 0, 0, 0)
 
-        self.__tooltip = ToolTipWidget(btn) # Set button's tooltip
-        self.__tooltip.setFixedSize(200, 200) # Set the size
-        self.__tooltip.setLayout(lay) # Set the layout of tooltip
+        self.__tooltip = ToolTipWidget(btn)
+        self.__tooltip.setFixedSize(200, 200)
+        self.__tooltip.setLayout(lay)
+        ### Make tooltip end ###
 
         self.setCentralWidget(mainWidget)
 
@@ -59,9 +64,10 @@ if __name__ == "__main__":
     example = MainWindow()
     example.show()
     app.exec_()
+
 ```
 
 Result
 
-![image](https://user-images.githubusercontent.com/55078043/161880140-7cf7ad82-41f4-4046-85a9-4e7cfad2e725.png)
+![image](https://user-images.githubusercontent.com/55078043/161909861-a724e0c5-4b16-4fa0-ab0b-7144b1386d82.png)
 
