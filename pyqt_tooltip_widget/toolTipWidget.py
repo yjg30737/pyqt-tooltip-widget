@@ -9,6 +9,8 @@ class ToolTipWidget(QWidget):
         self.__initUi()
 
     def __initVal(self, widget_to_set_tooltip_widget):
+        self.__tooltip_widget_name = 'tooltipWidget'
+
         self.__widget_to_set_tooltip_widget = widget_to_set_tooltip_widget
         self.__obj_name = 'widgetToSetToolTipWidget'
 
@@ -21,12 +23,15 @@ class ToolTipWidget(QWidget):
     def eventFilter(self, obj, e):
         if obj.objectName() == self.__obj_name:
             if e.type() == 10:
-                p = self.__widget_to_set_tooltip_widget.mapToGlobal(
-                    self.__widget_to_set_tooltip_widget.rect().bottomLeft())
-                geo = self.geometry()
-                geo.moveTopLeft(p)
-                self.setGeometry(geo)
-                self.show()
+                self.__show()
             elif e.type() == 11:
                 self.close()
         return super().eventFilter(obj, e)
+
+    def __show(self):
+        p = self.__widget_to_set_tooltip_widget.mapToGlobal(
+            self.__widget_to_set_tooltip_widget.rect().bottomLeft())
+        geo = self.geometry()
+        geo.moveTopLeft(p)
+        self.setGeometry(geo)
+        self.show()
