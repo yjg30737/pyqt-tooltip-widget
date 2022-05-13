@@ -5,7 +5,7 @@ PyQt QWidget as a tooltip
 * PyQt5 >= 5.8
 
 ## Setup
-`pip3 install git+https://github.com/yjg30737/pyqt-tooltip-widget.git --upgrade`
+`python -m pip install pyqt-tooltip-widget`
 
 ## Detailed Description
 This is `QWidget` which is activated like tooltip. When mouse cursor enters to the widget, `ToolTipWidget` pops up at the bottom left of the widget. Leave from the widget tooltip will be disappeared.
